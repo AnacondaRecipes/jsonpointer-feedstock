@@ -1,8 +1,8 @@
 {% set name = "jsonpointer" %}
-{% set version = "2.1" %}
+{% set version = "2.2" %}
 {% set bundle = "tar.gz" %}
 {% set hash_type = "sha256" %}
-{% set hash = "5a34b698db1eb79ceac454159d3f7c12a451a91f6334a4f638454327b7a89962" %}
+{% set hash = "f09f8deecaaa5aea65b5eb4f67ca4e54e1a61f7a11c75085e360fe6feb6a48bf" %}
 {% set build = 0 %}
 
 package:
