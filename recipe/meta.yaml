@@ -21,8 +21,19 @@ requirements:
     - wheel
 
 test:
+  source_files:
+    - tests.py
   imports:
     - jsonpointer
+  requires:
+    - python
+    - pip
+    - pytest
+  commands:
+    - pip check
+    - python -c "from importlib.metadata import version; assert(version('{{ name }}')=='{{ version }}')"
+    - pytest -vv tests.py
+  
 
 about:
   home: https://github.com/stefankoegl/python-json-pointer
