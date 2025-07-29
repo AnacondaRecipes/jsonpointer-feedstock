@@ -19,6 +19,8 @@ requirements:
     - python
     - setuptools
     - wheel
+  run:
+    - python
 
 test:
   source_files:
@@ -36,10 +38,11 @@ test:
 
 about:
   home: https://github.com/stefankoegl/python-json-pointer
-  license: BSD 3-Clause
+  license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE.txt
-  summary: 'Identify specific nodes in a JSON document (RFC 6901)'
+  summary: Identify specific nodes in a JSON document (RFC 6901)
+  description: Library to resolve JSON Pointers according to RFC 6901
   dev_url: https://github.com/stefankoegl/python-json-pointer
   doc_url: https://python-json-pointer.readthedocs.io
 
