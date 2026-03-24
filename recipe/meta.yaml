@@ -1,5 +1,5 @@
 {% set name = "jsonpointer" %}
-{% set version = "3.0.0" %}
+{% set version = "3.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 2b2d729f2091522d61c3b31f82e11870f60b68f43fbc705cb76bf4b832af59ef
+  sha256: 0b801c7db33a904024f6004d526dcc53bbb8a4a0f4e32bfd10beadf60adf1900
 
 build:
   skip: true  # [py<37]
@@ -35,7 +35,7 @@ test:
   commands:
     - pip check
     - python -c "from importlib.metadata import version; assert(version('{{ name }}')=='{{ version }}')"
-    - pytest -vv tests.py  
+    - pytest -vv tests.py
 
 about:
   home: https://github.com/stefankoegl/python-json-pointer
