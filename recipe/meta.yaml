@@ -1,5 +1,5 @@
 {% set name = "jsonpointer" %}
-{% set version = "3.2.1" %}
+{% set version = "3.4" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 47c846513b3a4ec46eecef1105207fba075e2a3659048e362bd7daff0fc33342
+  sha256: e57015ae65af3821c6a3976069860789cf326103f38b22b2178d41d021adad25
 
 build:
   number: 0
