@@ -1,5 +1,5 @@
 {% set name = "jsonpointer" %}
-{% set version = "3.6" %}
+{% set version = "3.8" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 82e839a3ba3a9e2b54394fda8b3d276c2459d80408d06ef9a6fbc369d7544ffc
+  sha256: a627a255641390bfb4d51d4cfbb90648078ae855b45804ef7e19ea13a4cca355
 
 build:
   number: 0
@@ -27,6 +27,7 @@ test:
   source_files:
     - tests.py
     - bin
+    - doc
   imports:
     - jsonpointer
   requires:
@@ -37,7 +38,8 @@ test:
     - pip check
     - python -c "from importlib.metadata import version; assert(version('{{ name }}')=='{{ version }}')"
     - jsonpointer --help
-    - pytest -vv tests.py
+    - pytest -vv tests.py doc/tutorial.rst --doctest-glob="*.rst"
+    - python -c "import doctest, jsonpointer; r = doctest.testmod(jsonpointer); assert not r.failed, r"  # doctests in the installed jsonpointer.py (upstream runs them via tests.py load_tests)
 
 about:
   home: https://github.com/stefankoegl/python-json-pointer
