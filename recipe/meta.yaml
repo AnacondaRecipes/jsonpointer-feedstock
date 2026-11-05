@@ -39,7 +39,7 @@ test:
     - python -c "from importlib.metadata import version; assert(version('{{ name }}')=='{{ version }}')"
     - jsonpointer --help
     - pytest -vv tests.py doc/tutorial.rst --doctest-glob="*.rst"
-    - python -c "import doctest, jsonpointer; r = doctest.testmod(jsonpointer); assert not r.failed, r"
+    - python -c "import doctest, jsonpointer; r = doctest.testmod(jsonpointer); assert not r.failed, r"  # doctests in the installed jsonpointer.py (upstream runs them via tests.py load_tests)
 
 about:
   home: https://github.com/stefankoegl/python-json-pointer
